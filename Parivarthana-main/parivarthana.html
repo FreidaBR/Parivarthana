@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parivarthana - Handcrafted Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Times New Roman', serif;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e3f2fd 50%, #bbdefb 100%);
+            color: #2c3e50;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 25px 40px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-size: 3em;
+            color: #1565c0;
+            font-family: 'Garamond', serif;
+            letter-spacing: 8px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 15px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        nav a {
+            color: #546e7a;
+            text-decoration: none;
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #1565c0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1565c0;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            cursor: pointer;
+            font-size: 1.8em;
+            color: #1565c0;
+            z-index: 101;
+            transition: transform 0.3s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #1565c0;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6em;
+            font-weight: bold;
+        }
+
+        /* Hero Section - New Design */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.freepik.com/free-photo/macrame-arrangement-with-copy-space_23-2149072887.jpg?semt=ais_hybrid&w=740&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(21, 101, 192, 0.4), rgba(100, 181, 246, 0.3));
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            max-width: 550px;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #fff;
+            opacity: 0.95;
+        }
+
+        .hero-title {
+            font-size: 4.5em;
+            font-family: 'Garamond', cursive;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-btn-primary {
+            background: white;
+            color: #1565c0;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1em;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 45px;
+            font-size: 1em;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hero-btn-secondary:hover {
+            background: white;
+            color: #1565c0;
+            transform: translateY(-3px);
+        }
+
+        .hero-image-side {
+            position: relative;
+            width: 450px;
+            height: 450px;
+        }
+
+        .hero-image-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600');
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-decorative-dots {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 150px;
+            height: 150px;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.4) 2px, transparent 2px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        /* Mission Section */
+        .mission {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 60px 40px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .mission h3 {
+            color: #1565c0;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .mission h4 {
+            color: #64b5f6;
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .mission p {
+            color: #546e7a;
+            font-size: 1.1em;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1565c0;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #1565c0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 0;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            cursor: pointer;
+            aspect-ratio: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(21, 101, 192, 0.8), rgba(100, 181, 246, 0.8));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 1;
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .category-content {
+            position: relative;
+            z-index: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(21, 101, 192, 0.9);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+            z-index: 2;
+        }
+
+        .category-card:hover .category-overlay {
+            transform: translateY(0);
+        }
+
+        .category-overlay h4 {
+            color: white;
+            margin: 0;
+            font-size: 1.3em;
+            letter-spacing: 2px;
+        }
+
+        /* Products Section */
+        .products {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #90caf9 0%, #42a5f5 100%);
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0);
+            transition: background 0.4s;
+        }
+
+        .product-card:hover .product-image::after {
+            background: rgba(0,0,0,0.1);
+        }
+
+        .product-info {
+            padding: 25px;
+            background: white;
+        }
+
+        .product-category {
+            color: #64b5f6;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin: 12px 0;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .product-price {
+            color: #1565c0;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .add-to-cart:hover {
+            background: #0d47a1;
+            transform: translateX(3px);
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            right: -450px;
+            top: 0;
+            width: 450px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+            transition: right 0.4s;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            background: #1565c0;
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.6em;
+            letter-spacing: 2px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-cart:hover {
+            transform: rotate(90deg);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .cart-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0;
+            display: flex;
+            gap: 20px;
+            border-left: 4px solid #1565c0;
+        }
+
+        .cart-item-image {
+            background: linear-gradient(135deg, #90caf9 0%, #42a5f5 100%);
+            width: 100px;
+            height: 100px;
+            border-radius: 0;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .cart-item-price {
+            color: #1565c0;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 12px;
+        }
+
+        .qty-btn {
+            background: #1565c0;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: #0d47a1;
+        }
+
+        .quantity {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .remove-btn {
+            background: #eceff1;
+            color: #546e7a;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: auto;
+            transition: all 0.3s;
+        }
+
+        .remove-btn:hover {
+            background: #ff5252;
+            color: white;
+        }
+
+        .cart-footer {
+            background: #f8f9fa;
+            padding: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5em;
+            color: #1565c0;
+            font-weight: bold;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 0;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .checkout-btn:hover {
+            background: #0d47a1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 80px 30px;
+            color: #90a4ae;
+        }
+
+        .empty-cart svg {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 0 auto 25px;
+            opacity: 0.5;
+            stroke: currentColor;
+        }
+
+        .empty-cart p {
+            font-size: 1.2em;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #1565c0;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            color: #546e7a;
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #1565c0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 40px 30px;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .scroll-top {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .scroll-top:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                gap: 50px;
+            }
+            
+            .hero-content {
+                max-width: 700px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 500px;
+                padding: 60px 0;
+            }
+
+            .hero-title {
+                font-size: 3em;
+            }
+
+            .hero-image-side {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+                width: 100%;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="CSA Centre for Social Action">
+                <h1><center>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPARIVARTHANA</center></h1>
+            </div>
+            
+            <nav>
+                <a href="#home">HOME</a>
+                <a href="#shop">SHOP</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- g Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Handcrafted with Love</p>
+                <h1 class="hero-title">Crafted by Heart, Chosen by You</h1>
+                <p class="hero-description">Discover unique handmade treasures that tell a story. Each piece is lovingly created by skilled artisans, bringing warmth and authenticity to your everyday life.</p>
+                <div class="hero-buttons">
+                    <button class="hero-btn-primary" onclick="scrollToShop()">EXPLORE COLLECTION</button>
+                    <button class="hero-btn-secondary" onclick="scrollToAbout()">OUR STORY</button>
+                </div>
+            </div>
+            <div class="hero-image-side">
+                <div class="hero-image-frame"></div>
+                <div class="hero-decorative-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="about">
+        <h3>SOPHISTICATION & CONVENIENCE</h3>
+        <h4>Learn more...</h4>
+        <p>We've redefined the online experience, offering a curated selection of modern essentials and timely finds that effortlessly blend style and convenience. Dive into a world where shopping is easy, enjoyable, and decisive in value.</p>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="category-grid">
+            <div class="category-card" onclick="filterCategory('Stationery')">
+                <div class="category-content">
+                    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400" alt="Stationery">
+                </div>
+                <div class="category-overlay">
+                    <h4>Stationery</h4>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Accessories')">
+                <div class="category-content">
+                    <img src="https://media.istockphoto.com/id/958552122/photo/handcrafts-and-goods-on-display-in-a-street-market-nairobi-kenya.jpg?s=612x612&w=0&k=20&c=-98VL29wOwxSALOZtDLYB4-UaOwMwl7hfhXKamPc_cg=" alt="Accessories">
+                </div>
+                <div class="category-overlay">
+                    <h4>Accessories</h4>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Gift Items')">
+                <div class="category-content">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400" alt="Gift Items">
+                </div>
+                <div class="category-overlay">
+                    <h4>Gift Items</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="shop">
+        <h2 class="section-title">FEATURED PRODUCTS:</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">These are amazing things customers are saying about your business. Double click or click Edit Text to make it yours.</p>
+                <p class="testimonial-author">- Rama Iyer</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">These are amazing things customers are saying about your business. Double click or click Edit Text to make it yours.</p>
+                <p class="testimonial-author">- Kavita Sharma</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">These are amazing things customers are saying about your business. Double click or click Edit Text to make it yours.</p>
+                <p class="testimonial-author">- Priya Nair</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>YOUR CART</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Parivarthana. All rights reserved.</p>
+        <p>Handcrafted with love in India</p>
+        <div class="social-links"></div>
+        <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    </footer>
+
+    <script>
+        // Product Data from Price List
+        const products = [
+            // Stationery
+            { id: 1, name: 'Photo Frame Big', price: 130, category: 'Stationery', image: 'https://i.pinimg.com/originals/3a/2a/58/3a2a581696af4069886d387c403dc700.jpg' },
+            { id: 2, name: 'Photo Frame Small', price: 70, category: 'Stationery', image: 'https://i.ytimg.com/vi/YRc5CIeKEN0/maxresdefault.jpg' },
+            { id: 3, name: 'Notepad Small', price: 70, category: 'Stationery', image: 'https://urbaneyogi.com/wp-content/uploads/2020/06/green-notebook1-min.jpg' },
+            { id: 4, name: 'Notepad Big', price: 95, category: 'Stationery', image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400' },
+            { id: 5, name: 'Pen Stand', price: 70, category: 'Stationery', image: 'https://navavihan.com/cdn/shop/products/hand-crafted-ethnic-mural-art-upcycled-handmade-paper-pink-pen-stand-psd.jpg?v=1680424903&width=1920' },
+            { id: 6, name: 'Pen Stand Round', price: 85, category: 'Stationery', image: 'https://m.media-amazon.com/images/I/81YWi6lfYsL.jpg' },
+            { id: 7, name: 'Pen Stand with Frame', price: 95, category: 'Stationery', image: 'https://www.mbcnschool.org/wp-content/uploads/2015/09/IMG_20170213_134749.jpg' },
+            { id: 8, name: 'Hard Board with Clamp File', price: 250, category: 'Stationery', image: 'https://image.made-in-china.com/202f0j00rQecdvlCZTpZ/A4-Thickness-Hardboard-Wooden-Office-Hanging-Writing-Clip-Board-with-Custom-Logo.webp' },
+            { id: 9, name: 'Greeting Card', price: 35, category: 'Stationery', image: 'https://i.ytimg.com/vi/pG25XhhEMAo/maxresdefault.jpg' },
+            { id: 10, name: 'Envelope Small', price: 15, category: 'Stationery', image: 'https://anandhastationery.in/wp-content/uploads/2024/05/Jain-Mini-Envelope-Kraft.jpg' },
+            { id: 11, name: 'Envelope Big', price: 20, category: 'Stationery', image: 'https://m.media-amazon.com/images/I/31nQ-FvLuqL.jpg' },
+            { id: 12, name: 'Long Box', price: 95, category: 'Stationery', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxEewo5iKgQvdcLRs4k_LAKJJNNsIQWlxYDA&s' },
+            { id: 13, name: 'Box with Frame', price: 120, category: 'Stationery', image: 'https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?w=400' },
+            { id: 14, name: 'Exam Pad Small', price: 60, category: 'Stationery', image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=400' },
+            { id: 15, name: 'Exam Pad Big', price: 120, category: 'Stationery', image: 'https://images.unsplash.com/photo-1589943122243-f0efc9e902ff?w=400' },
+            { id: 16, name: 'Diary', price: 130, category: 'Stationery', image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400' },
+            { id: 17, name: 'STD Folder', price: 50, category: 'Stationery', image: 'https://images.unsplash.com/photo-1582049165374-ce45e87c0c2d?w=400' },
+            { id: 18, name: 'Blacksheet Folder', price: 70, category: 'Stationery', image: 'https://images.unsplash.com/photo-1543857182-68620f4d8a6d?w=400' },
+            { id: 19, name: 'Clip Folder', price: 130, category: 'Stationery', image: 'https://images.unsplash.com/photo-1584553184929-4f2e5f7b7a8c?w=400' },
+            { id: 20, name: 'Visiting Card Box', price: 70, category: 'Stationery', image: 'https://images.unsplash.com/photo-1619730736398-c9b6fa09d5e8?w=400' },
+            { id: 21, name: 'Scrap Book Small', price: 240, category: 'Stationery', image: 'https://images.unsplash.com/photo-1544185310-0b3cf501672b?w=400' },
+            { id: 22, name: 'Scrap Book Big', price: 300, category: 'Stationery', image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400' },
+            { id: 23, name: 'Zig Zag Album', price: 300, category: 'Stationery', image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400' },
+            { id: 24, name: 'Hard Board Pouch Folder', price: 130, category: 'Stationery', image: 'https://images.unsplash.com/photo-1583946099379-f9c9cb8bc030?w=400' },
+            { id: 25, name: 'Hard Board with Frame', price: 155, category: 'Stationery', image: 'https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=400' },
+            { id: 26, name: 'Paper Pen', price: 20, category: 'Stationery', image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
+            
+            // Accessories
+            { id: 27, name: 'Carry Bag Big', price: 50, category: 'Accessories', image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400' },
+            { id: 28, name: 'Carry Bag Small', price: 30, category: 'Accessories', image: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400' },
+            { id: 29, name: 'Jewellery Box', price: 70, category: 'Accessories', image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400' },
+            
+            // Gift Items
+            { id: 30, name: 'Gift Box with Frame', price: 120, category: 'Gift Items', image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400' }
+        ];
+
+        let cart = [];
+        let currentFilter = 'All';
+
+        // Initialize the page
+        function init() {
+            displayProducts(products);
+            updateCartDisplay();
+        }
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+            
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image" style="background-image: url('${product.image}'); background-size: cover; background-position: center;"></div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h4 class="product-name">${product.name}</h4>
+                        <div class="product-footer">
+                            <div class="product-price">₹${product.price}</div>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">ADD TO CART</button>
+                        </div>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        // Filter products by category
+        function filterCategory(category) {
+            currentFilter = category;
+            const filtered = category === 'All' ? products : products.filter(p => p.category === category);
+            displayProducts(filtered);
+            
+            // Scroll to products section
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to shop section
+        function scrollToShop() {
+            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to about section
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCartDisplay();
+            
+            // Show a brief animation
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartIcon.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            // Update cart count
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartTotal.textContent = '₹0';
+            } else {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image" style="background-image: url('${item.image}'); background-size: cover; background-position: center;"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">₹${item.price}</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="qty-btn" onclick="increaseQuantity(${item.id})">+</button>
+                                <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = `₹${total}`;
+            }
+        }
+
+        // Increase quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity++;
+                updateCartDisplay();
+            }
+        }
+
+        // Decrease quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item && item.quantity > 1) {
+                item.quantity--;
+                updateCartDisplay();
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
+
+        // Toggle cart
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Thank you for your order!\n\nTotal: ₹${total}\n\nWe'll contact you shortly to confirm your order.`);
+            
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize on page load
+        window.onload = init;
+    </script>
+</body>
+</html>
